@@ -47,6 +47,3 @@ def count (user,mode):
                     return telop
                 elif mode == "title":
                     return title
-
-
-print(telop("nodasori2525"))
