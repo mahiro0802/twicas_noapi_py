@@ -10,6 +10,13 @@ def totalviewer (user):
     total = count(user,"total")
     return total
 
+def telop(user):
+    telop = count(user,"telop")
+    return telop
+
+def title (user):
+    title = count(user,"title")
+
 def count (user,mode):
     movie1 = urllib.request.Request("https://frontendapi.twitcasting.tv/users/" + user + "/latest-movie")
     with urllib.request.urlopen(movie1) as res:
@@ -30,7 +37,16 @@ def count (user,mode):
                 view = movie["viewers"]
                 now = view["current"]
                 total = view["total"]
+                telop = movie["telop"]
+                title = movie["title"]
                 if mode == "now":
                     return now
                 elif mode == "total":
                     return total
+                elif mode == "telop":
+                    return telop
+                elif mode == "title":
+                    return title
+
+
+print(telop("nodasori2525"))
