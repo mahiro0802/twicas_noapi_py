@@ -37,8 +37,17 @@ def count (user,mode):
                 view = movie["viewers"]
                 now = view["current"]
                 total = view["total"]
-                telop = movie["telop"]
-                title = movie["title"]
+                #telop = movie["telop"]
+                if "telop" in movie:
+                    telop = movie["telop"]
+                else:
+                    telop = None
+
+                if "title" in movie:
+                    title = movie["title"]
+                else:
+                    title = None
+                
                 if mode == "now":
                     return now
                 elif mode == "total":
